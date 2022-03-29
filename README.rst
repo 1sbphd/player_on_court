@@ -17,7 +17,7 @@ Play-by-play данные, которые предоставляет НБА на
 ----------------
 .. code:: python
 
-    >>> import player_on_court as poc
+    >>> import player_on_court.player_on_court as poc
     >>> print(df.shape[1])
     34
     >>> df1 = poc.adding_player_on_court(df)
