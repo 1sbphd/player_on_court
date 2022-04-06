@@ -1,7 +1,7 @@
 [tool.poetry]
 
 name = "player_on_court"
-version = "0.1.0"
+version = "0.1.1"
 description = "Adding players on court to  play-by-play data"
 authors = ["Vladislav Shufinskiy <shufinsky.90210@gmail.com>"]
 
@@ -15,6 +15,7 @@ nba-api = "^1.1.8"
 pytest = "^6.2.5"
 pytest-cov = "^3.0.0"
 pytest-flake8 = "^1.1.0"
+coveralls = "^1.6.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
