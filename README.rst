@@ -3,7 +3,7 @@
 Adding data about players on court in NBA games.
 ================================================
 
-Player_on_court package allows you to add to  play-by-play data information
+**player_on_court** package allows you to add to  play-by-play data information
 about players who were on court at any given time.
 
 **Important: This package does not request play-by-play data from NBA website.
@@ -26,6 +26,16 @@ I will soon describe a more complete mechanism for processing
 play-by-play data to obtain information about players on court in an
 article.
 
+In package two main functions: **adding_player_on_court** and **replace_id_on_name**.
+
+**adding_player_on_court** takes play-by-play data as input and returns it with 10
+columns of the PLAYER_ID of players who were on court at each time.
+
+**replace_on_id_name** allows you to replace PLAYER_ID with first and last name of player.
+This allows user to understand exactly which players were on court (few know PLAYER_ID
+all players in NBA),but it is not necessary to do this before calculations, because the
+player's NAME_SURNAME is not unique, unlike PLAYER_ID.
+
 Code example
 ------------
 .. code:: python
@@ -44,6 +54,14 @@ Code example
     >>> print(players_name)
     ['Kevin Durant', 'Nic Claxton', 'Blake Griffin', 'James Harden', 'Joe Harris',
     'Brook Lopez', 'Jrue Holiday', 'Grayson Allen', 'Khris Middleton', 'Giannis Antetokounmpo']
+
+You can also replace the PLAYER_ID with the player's name in the entire data frame at once.
+
+.. code:: python
+
+    >>> cols = ["PLAYER1", "PLAYER2", "PLAYER3", "PLAYER4", "PLAYER5", "PLAYER6", "PLAYER7", "PLAYER8", "PLAYER9", "PLAYER10"]
+    >>> pbp_with_players.loc[:, cols] = pbp_with_players.loc[:, cols].apply(poc.replace_id_on_name, result_type="expand")
+
 
 .. |License| image:: https://img.shields.io/badge/License-MIT-yellow.svg
     :target:  https://opensource.org/licenses/MIT

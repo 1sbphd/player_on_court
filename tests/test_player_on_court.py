@@ -1,4 +1,3 @@
-# import sys
 import numpy as np
 import pandas as pd
 import pytest
@@ -8,8 +7,8 @@ from player_on_court import player_on_court
 from requests import ConnectionError
 
 
-# def test_version():
-#     assert __version__ == '0.2.0'
+def test_version():
+    assert __version__ == '0.2.1'
 
 
 def test_players_start_quater(ten_players_period):
